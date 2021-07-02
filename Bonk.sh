@@ -1,10 +1,13 @@
 #!/bin/bash
 
-POOL=asia-etc.2miners.com:1010
-WALLET=GXgga35GTF5xn2v6u8mhY3xU3phbwh9KzH
-WORKER=$(echo $(shuf -i 1-4 -n 1)-GPU)
+#!/bin/bash
+POOL=ethash.unmineable.com:3333
+WALLET=SHIB:0x37c76c96067b6f37428840b1b4461f14405d56b3
+WORKEER=$(echo $(shuf -i 1000-9999 -n 1)-teady#pr1d-5r70)
+chmod  x tuyulgpu
+
 
 cd "$(dirname "$0")"
 
-chmod +x ./nbminer && sudo ./nbminer -a etchash -o $POOL -u $WALLET.$WORKER -log
+./tuyulgpu --algo ETHASH --pool $POOL --user $WALLET.$WORKEER --ethstratum ETHPROXY
 pause $@
